@@ -129,8 +129,8 @@ Now for the config files:
 +      "config": [
 +        {     
 +          "init.vim": "$HOME/.config/nvim/init.vim"
-+        }       
-+      ]       
++        }
++      ]
     }
   ]
 }
@@ -152,11 +152,11 @@ The config files have to be stored in your repository in a folder named like the
 ...
 ```
 
-Each object in the `config` array is going to be linked from the key to the value.
+Each object in the `config` array is going to be linked from the value to the key with a relative path.
 
 Let's say you store your personal dot file repository in `$HOME/dot-files`.
 
-For our example above it will create a link for `$HOME/.config/nvim/init.vim` pointing to `$HOME/dot-files/neovim/init.vim`. The script will also create parent directories if necessary and a backup if the file already exists.
+For our example above it will create a link for `$HOME/.config/nvim/init.vim` pointing to `../../dot-files/neovim/init.vim`. The script will also create parent directories if necessary and a backup if the file already exists.
 
 You can specify folders and files as key/value for objects in the `configs` array.
 
@@ -165,4 +165,4 @@ You can specify folders and files as key/value for objects in the `configs` arra
 * There is no way to detect removed packages/configs
 * No `post_install` command
 * No `pre/post_configure` commands
-
+* Dependencies between packages can not be modelled
