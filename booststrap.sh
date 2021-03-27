@@ -16,7 +16,7 @@ function run() {
   else
     echo -e "\nOk. You can still do this later by calling:"
     echo "$cmd"
-    echo "If you want to generate the file again call $script_dir/gen_$stage.py"
+    echo "If you want to generate the file again call $script_dir/gen_$stage.py or $0 $stage"
   fi
 
 }
