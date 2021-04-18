@@ -14,7 +14,6 @@ dot_file_path = os.path.join(script_dir, "dot.json")
 
 available_providers = []
 
-
 def provider_for_system():
     for provider in available_providers:
         provider_id = provider["id"] 
@@ -33,6 +32,7 @@ def find_pkg_for_provider(package):
     try:
         providers = package["providers"]
         for provider in providers:
+            print(providers)
             try:
                 return provider[provider_for_system()]
             except KeyError:
