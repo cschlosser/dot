@@ -32,7 +32,6 @@ def find_pkg_for_provider(package):
     try:
         providers = package["providers"]
         for provider in providers:
-            print(providers)
             try:
                 return provider[provider_for_system()]
             except KeyError:
