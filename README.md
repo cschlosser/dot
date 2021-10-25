@@ -32,13 +32,13 @@ Key features:
 
 ### Updating your `dot.json`
 
-If you want to add new packages or add new configs to existing packages you can do so easily by editing [dot.json](dot.json) and rerunning `bootstrap.sh`. The shell scripts generated are aware of changes to some extent
+If you want to add new packages or add new configs to existing packages you can do so easily by editing [dot.json](dot.json) and rerunning `bootstrap.sh`. The shell scripts generated are aware of changes to some extent.
 
 ## dot.json syntax
 
 Everything starts with a `json` object containing a `version` object and a `packages` array.
 
-The `version` has to match the one of [dot](https://github.com/cschlosser/dot) you're using.
+The `version` has to match the version of [dot](https://github.com/cschlosser/dot) you're using.
 
 ```json
 {
@@ -135,12 +135,12 @@ Now for the config files:
   ]
 }
 ```
-The config files have to be stored in your repository in a folder named like the `name` object in your `packages` array.
+The config files have to be stored in your repository in a folder with the same values as the the `name` key of the object in your `packages` array.
 
 ```bash
 .
 ├── LICENSE.txt
-├── booststrap.sh
+├── bootstrap.sh
 ├── dot.json
 ├── gen_configure.py
 ├── gen_install.py
@@ -156,7 +156,7 @@ Each object in the `config` array is going to be linked from the value to the ke
 
 Let's say you store your personal dot file repository in `$HOME/dot-files`.
 
-For our example above it will create a link for `$HOME/.config/nvim/init.vim` pointing to `../../dot-files/neovim/init.vim`. The script will also create parent directories if necessary and a backup if the file already exists.
+For our example above it will create a link for `$HOME/.config/nvim/init.vim` pointing to `../../dot-files/neovim/init.vim`. The script will also create parent directories if necessary and a backup if a file with the same name already exists.
 
 You can specify folders and files as key/value for objects in the `configs` array.
 
